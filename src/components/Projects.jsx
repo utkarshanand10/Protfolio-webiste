@@ -1,36 +1,61 @@
 import React from "react";
 
+import netflixCloneImage from "../assets/image/Netflix-clone.png";
+import aiImageGeneratorImage from "../assets/image/NovaAI.png";
+import TaskManagerImage from "../assets/image/TaskManager.png";
+import CrudImage from "../assets/image/CrudImage.png";
+import passwordGeneratorImage from "../assets/image/Password-genrator.png";
+import currencyConverterImage from "../assets/image/Calender-view.png";
+import novaAiImage from "../assets/image/spiral.png";
+import portfolioWebsiteImage from "../assets/image/Earth-threejs.png";
+import learnKodeImage from "../assets/image/LearnKode.png";
+
 const Projects = () => {
   const projectData = [
     {
-      title: "Netflix Clone",
-      image: "/netflix-thumbnail.jpg",
-      github: "https://github.com/utkarshanand10/Netflix-clone",
-    },
-    {
-      title: "AI Image Generator",
-      image: "/css.png",
-      github: "https://github.com/utkarshanand10/Ai-imageGenrator",
+      title: "Learn Kode",
+      image: learnKodeImage,
+      liveLink: "https://learn-kode-frontend.vercel.app/",
     },
     {
       title: "CRUD Based App",
-      image: "/html.png",
-      github: "https://github.com/utkarshanand10/-CRUD-based-MERN-app",
+      image: CrudImage,
+      liveLink: "https://crud-based-mern-app.onrender.com/",
+    },
+    {
+      title: "Netflix Clone",
+      image: netflixCloneImage,
+      liveLink: "https://netflix-clone-sigma-steel.vercel.app/",
+    },
+    {
+      title: "Task Manager",
+      image: TaskManagerImage,
+      liveLink: "https://taskmanager-mauve-nine.vercel.app/",
+    },
+    {
+      title: "AI Image Generator",
+      image: aiImageGeneratorImage,
+      github: "https://github.com/utkarshanand10/Ai-imageGenrator",
     },
     {
       title: "Password Generator",
-      image: "/html.png",
+      image: passwordGeneratorImage,
       github: "https://github.com/utkarshanand10/Password_genrator",
     },
     {
       title: "Currency Converter",
-      image: "/html.png",
+      image: currencyConverterImage,
       github: "https://github.com/utkarshanand10/Currency-Converter",
     },
     {
       title: "NovaAI",
-      image: "/novaai.png",
+      image: novaAiImage,
       github: "https://github.com/utkarshanand10/NovaAI",
+    },
+    {
+      title: "Portfolio Website",
+      image: portfolioWebsiteImage,
+      github: "https://github.com/utkarshanand10/Portfolio-Website",
     },
   ];
 
@@ -59,12 +84,14 @@ const Projects = () => {
                 {project.title}
               </h3>
               <a
-                href={project.github}
+                href={project.github || project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white uppercase text-xs font-bold bg-gray-800 px-4 py-2 rounded-md flex justify-between items-center hover:bg-gray-700 transition"
               >
-                Click here to visit GitHub
+                {project.github
+                  ? "Click here to visit GitHub"
+                  : "Click here to visit Live Demo"}
                 <span className="ml-2 text-xl">➔</span>
               </a>
             </div>
